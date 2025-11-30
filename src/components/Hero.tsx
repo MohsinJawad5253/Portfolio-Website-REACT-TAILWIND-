@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download } from "lucide-react";
+import Portfolio from "../assets/portfolio.pdf";
 
 const Hero = () => {
   const scrollToSection = (href: string) => {
@@ -29,22 +30,26 @@ const Hero = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                variant="hero"
-                size="xl"
-                onClick={() => scrollToSection("#portfolio")}
-                className="group"
-              >
+              
+                <Button
+                  variant="hero"
+                  size="xl"
+                  onClick={() => scrollToSection("#portfolio")}
+                  className="group"
+                >
                 View Portfolio
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
+              
               <Button
                 variant="architectural"
                 size="xl"
-                onClick={() => scrollToSection("#contact")}
+                asChild // Add this prop
               >
-                <Download className="mr-2 h-5 w-5" />
-                Download Resume
+                <a href={Portfolio} target="_blank" rel='noopener noreferrer'>
+                  <Download className="mr-2 h-5 w-5" />
+                  Download Resume
+                </a>
               </Button>
             </div>
 

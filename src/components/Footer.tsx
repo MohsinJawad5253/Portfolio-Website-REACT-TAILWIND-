@@ -46,7 +46,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand & Description */}
           <div className="lg:col-span-1 space-y-4">
-            <h3 className="text-xl font-bold">Jawadwala Mohsin Shabbir</h3>
+            <h3 className="text-xl font-bold">Hatim Merchant</h3>
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
               Professional architect with 3+ years of experience in residential and interior design. 
               Creating functional spaces that inspire and endure.
@@ -56,7 +56,7 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-sm">
                 <Mail className="h-4 w-4" />
-                <span>mohsin@jawadwala.com</span>
+                <span>hatim@domain.com</span>
               </div>
               <div className="flex items-center space-x-2 text-sm">
                 <Phone className="h-4 w-4" />

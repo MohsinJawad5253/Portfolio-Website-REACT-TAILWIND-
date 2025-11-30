@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
 import { 
   Mail, 
   Phone, 
@@ -27,35 +28,60 @@ const Contact = () => {
     projectType: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.message) {
-      toast({
-        title: "Missing Information",
-        description: "Please fill in all required fields.",
-        variant: "destructive"
-      });
-      return;
-    }
+  // call this once (e.g., top-level of file or in useEffect on mount)
+emailjs.init("BufbAGQvDZnRqr-hC"); // public key — okay to use client-side
 
-    // Simulate form submission
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  if (!formData.name || !formData.email || !formData.message) {
     toast({
-      title: "Message Sent!",
-      description: "Thank you for your inquiry. I'll get back to you within 24 hours.",
+      title: "Missing Information",
+      description: "Please fill in all required fields.",
+      variant: "destructive",
     });
+    return;
+  }
 
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
-      projectType: ""
+  emailjs
+    .send(
+      "service_z2j9fvj",       // your service ID
+      "template_9ra3yhs",      // your template ID
+      {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        subject: formData.subject,
+        message: formData.message,
+        projectType: formData.projectType,
+      },
+      "BufbAGQvDZnRqr-hC"       // your public key
+    )
+    .then(() => {
+      toast({
+        title: "Message Sent!",
+        description: "I'll get back to you shortly.",
+      });
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+        projectType: "",
+      });
+    })
+    .catch(() => {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Try again later.",
+        variant: "destructive",
+      });
     });
-  };
+};
+
+
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;

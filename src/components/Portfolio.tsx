@@ -1,11 +1,11 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { 
-  ExternalLink, 
-  Calendar, 
-  MapPin, 
-  Users, 
+import {
+  ExternalLink,
+  Calendar,
+  MapPin,
+  Users,
   Square,
   Home,
   Building
@@ -21,7 +21,7 @@ const Portfolio = () => {
       category: "Residential",
       type: "High-end Residential",
       client: "Lodha Group",
-      location: "Mumbai, India", 
+      location: "Mumbai, India",
       year: "2023",
       duration: "8 months",
       area: "3,500 sq ft",
@@ -29,7 +29,7 @@ const Portfolio = () => {
       description: "A luxurious residential project featuring modern architectural elements with sustainable design principles. The project emphasizes open spaces, natural lighting, and premium materials throughout.",
       features: [
         "Sustainable design principles",
-        "Smart home integration", 
+        "Smart home integration",
         "Premium material selection",
         "Landscape integration",
         "Energy-efficient systems"
@@ -51,7 +51,7 @@ const Portfolio = () => {
       client: "Private Client",
       location: "Pune, India",
       year: "2023",
-      duration: "6 months", 
+      duration: "6 months",
       area: "4,200 sq ft",
       status: "Under Construction",
       description: "A contemporary villa design that seamlessly blends indoor and outdoor living spaces. Features include a minimalist aesthetic with emphasis on natural materials and panoramic views.",
@@ -109,7 +109,7 @@ const Portfolio = () => {
       year: "2022",
       duration: "5 months",
       area: "2,500 sq ft",
-      status: "Completed", 
+      status: "Completed",
       description: "Modern office design for a growing tech startup. Focus on collaborative spaces, flexible work areas, and brand identity integration throughout the space.",
       features: [
         "Collaborative work spaces",
@@ -121,7 +121,7 @@ const Portfolio = () => {
       role: "Commercial Designer",
       responsibilities: [
         "Space planning and layout design",
-        "Brand identity integration", 
+        "Brand identity integration",
         "Furniture specification",
         "Project management and execution"
       ],
@@ -164,20 +164,20 @@ const Portfolio = () => {
         <div className="grid lg:grid-cols-2 gap-8">
           {projects.map((project) => {
             const CategoryIcon = getCategoryIcon(project.category);
-            
+
             return (
               <Card key={project.id} className="overflow-hidden shadow-elegant hover:shadow-lifted transition-all duration-300 group">
                 {/* Project Image */}
                 <div className="h-64 relative overflow-hidden">
                   {project.id === 1 ? (
-                    <img 
-                      src={lodhaImage} 
+                    <img
+                      src={lodhaImage}
                       alt={project.title}
                       className="w-full h-full object-cover"
                     />
                   ) : project.id === 2 ? (
-                    <img 
-                      src={villaImage} 
+                    <img
+                      src={villaImage}
                       alt={project.title}
                       className="w-full h-full object-cover"
                     />
@@ -190,7 +190,7 @@ const Portfolio = () => {
                       <Badge variant="secondary" className="bg-background/90">
                         {project.category}
                       </Badge>
-                      <Badge 
+                      <Badge
                         variant={project.status === "Completed" ? "default" : "outline"}
                         className={project.status === "Completed" ? "bg-green-600 text-white" : "bg-orange-100 text-orange-800"}
                       >
@@ -279,8 +279,8 @@ const Portfolio = () => {
                   </div>
 
                   {/* CTA */}
-                  <Button 
-                    variant="architectural" 
+                  <Button
+                    variant="architectural"
                     className="w-full group"
                     onClick={() => scrollToSection("#contact")}
                   >
