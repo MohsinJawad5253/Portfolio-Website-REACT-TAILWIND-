@@ -75,7 +75,7 @@ const Hero = () => {
             <div className="relative">
               <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-2xl bg-architectural-pink shadow-lifted overflow-hidden">
                 <div className="w-full h-full bg-gradient-to-br from-architectural-blue/20 to-architectural-sage/20 flex items-center justify-center">
-                  <div className="text-6xl text-architectural-blue/30">👨‍💼</div>
+                  <div className="text-6xl text-architectural-blue/30">💀</div>
                 </div>
               </div>
               {/* Decorative Elements */}
