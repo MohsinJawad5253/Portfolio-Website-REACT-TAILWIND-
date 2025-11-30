@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from "@emailjs/browser";
+import Portfolio from "../assets/portfolio.pdf";
 import { 
   Mail, 
   Phone, 
@@ -297,10 +298,12 @@ const handleSubmit = (e) => {
             <Card className="p-6 shadow-elegant">
               <h3 className="text-xl font-bold text-primary mb-4">Quick Actions</h3>
               <div className="space-y-3">
+                <a href={Portfolio} target="_blank" rel='noopener noreferrer'>
                 <Button variant="architectural" className="w-full justify-start">
                   <Download className="mr-2 h-5 w-5" />
                   Download Portfolio
                 </Button>
+                </a>
                 <Button variant="architectural" className="w-full justify-start">
                   <MessageSquare className="mr-2 h-5 w-5" />
                   Schedule Consultation
