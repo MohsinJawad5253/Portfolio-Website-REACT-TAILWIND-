@@ -19,7 +19,7 @@ const About = () => {
           <div className="space-y-8">
             <div className="space-y-6">
               <h3 className="text-2xl font-bold text-primary">
-                Jawadwala Mohsin Shabbir
+                Hatim Merchant
               </h3>
               <p className="text-muted-foreground leading-relaxed">
                 I am an architect having 3+ years of experience in this field, specializing in 
