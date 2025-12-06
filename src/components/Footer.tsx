@@ -46,7 +46,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand & Description */}
           <div className="lg:col-span-1 space-y-4">
-            <h3 className="text-xl font-bold">Hatim Merchant</h3>
+            <h3 className="text-xl font-bold">Jawadwala Mohsin Shabbir</h3>
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
               Professional architect with 3+ years of experience in residential and interior design. 
               Creating functional spaces that inspire and endure.
@@ -56,7 +56,7 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-sm">
                 <Mail className="h-4 w-4" />
-                <span>hatim@domain.com</span>
+                <span>mohsin@jawadwala.com</span>
               </div>
               <div className="flex items-center space-x-2 text-sm">
                 <Phone className="h-4 w-4" />
@@ -151,14 +151,17 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="border-t border-primary-foreground/20 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-            <div className="flex items-center space-x-1 text-sm text-primary-foreground/80">
-              <span>© {currentYear} Jawadwala Mohsin Shabbir. Made with</span>
-              <Heart className="h-4 w-4 text-red-400 fill-current" />
-              <span>in Mumbai</span>
+          <div className="flex flex-col md:flex-row items-center justify-center md:justify-between gap-4">
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-1 text-sm text-primary-foreground/80 text-center md:text-left">
+              <span>© {currentYear} Jawadwala Mohsin Shabbir.</span>
+              <span className="flex items-center gap-1">
+                Made with
+                <Heart className="h-4 w-4 text-red-400 fill-current" />
+                in Mumbai
+              </span>
             </div>
             
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center justify-center">
               <button
                 onClick={scrollToTop}
                 className="flex items-center space-x-2 text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-200"
